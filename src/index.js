@@ -9,7 +9,7 @@ import store from './store/store'
 
 console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV == 'development') {
-    axios.defaults.baseURL = 'http://localhost:3002'
+    axios.defaults.baseURL = 'http://localhost:3001'
 } else{
     axios.defaults.baseURL = 'https://rootrsk-train-api.herokuapp.com';
 }
@@ -21,10 +21,10 @@ axios.interceptors.request.use(function (config) {
 });
 
 ReactDom.render(
-    <StrictMode>
+    <>
         <Provider store={store}>
             <App />
         </Provider>
-    </StrictMode>,
+    </>,
     document.getElementById('root')
 )

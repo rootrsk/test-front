@@ -1,17 +1,16 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import CreateDailyTrain from './CreateDailyTrain'
-import Nav from './Nav'
-import TrainForm from './TrainForm'
+import CreateTest from './test/CreateTest'
+import EditTest from './test/EditTest'
+import Tests from './test/Tests'
 
 function AdminRouter() {
     return (
         <div>
-            <Nav />
             <Switch>
-                <Route path='/admin/create-train' component={TrainForm} />
-                <Route path='/admin/create-dateTrain' component={CreateDailyTrain} />
-                
+                <Route path='/admin/tests' component={Tests} />
+                <Route path='/admin/test-create' component={CreateTest} />
+                <Route path='/admin/test-edit' component={EditTest} />
             </Switch>
         </div>
     )
