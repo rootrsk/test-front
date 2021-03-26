@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import QuestionForm from './QuestionForm'
 import Alert from '@material-ui/lab/Alert'
 import './style.css'
+import { ExpandMore } from '@material-ui/icons'
 
 function TestForm(props) {
     console.log(props)
@@ -184,23 +185,27 @@ function TestForm(props) {
                 <div className="accordance">
                     <Accordion>
                         <AccordionSummary
-                            // expandIcon={}
+                            expandIcon={<ExpandMore />}
                             aria-controls="panel1a-content"
                         >
                             <Typography variant='h5'>Questions</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             {questions.length>0 ?
+                                <div className='container-flex'>
+                                    {
+                                        questions.map((question,index)=>
+                                            <QuestionForm 
+                                                key={index} {...question} 
+                                                index={index} 
+                                                delete={deleteQuestion} 
+                                                disabled={true}
+                                                save={saveQuestion}
+                                            /> 
+                                        )
+                                    }
+                                </div>
                                 
-                                questions.map((question,index)=>
-                                    <QuestionForm 
-                                        key={index} {...question} 
-                                        index={index} 
-                                        delete={deleteQuestion} 
-                                        disabled={true}
-                                        save={saveQuestion}
-                                    /> 
-                                )
                                 :<Alert className='input' severity='warning' variant='outlined'>No Question Added yet</Alert>
                             }
                             

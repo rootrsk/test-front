@@ -2,8 +2,13 @@ import { Button } from '@material-ui/core'
 import React, { useState,useEffect } from 'react'
 
 function QuestionTemplate(props) {
-    const [answer,setUserAnswer] = useState(props.answer)
+    // console.log(props)
+    const [option1, setOption1] = useState('#ffffff')
+    const [option2, setOption2] = useState('#ffffff')
+    const [option3, setOption3] = useState('#ffffff')
+    const [option4, setOption4] = useState('#ffffff')
     const saveAnswer = (option) =>{
+        if(!!!props.save) return
         if(props.answer && props.answer.user_answer === option){
             return props.save('')
         }
@@ -11,19 +16,29 @@ function QuestionTemplate(props) {
     }
     
     useEffect(()=>{
-        document.getElementsByClassName('option')[0].style.background = '#ffffff'
-        document.getElementsByClassName('option')[1].style.background = '#ffffff'
-        document.getElementsByClassName('option')[2].style.background = '#ffffff'
-        document.getElementsByClassName('option')[3].style.background = '#ffffff'
-        if(props.answer){
-            // console.log('I got a answer')
-            // console.log(props.answer)
+        if(!!props.result){
+            if (props.correct_option === 1) setOption1('green')
+            if (props.correct_option === 2) setOption2('green')
+            if (props.correct_option === 3) setOption3('green')
+            if (props.correct_option === 4) setOption4('green')
+        }
+        if(props.answer && props.result){
+            if (props.answer.user_answer === 1 && props.correct_option !== 1) setOption1('#f70a46')
+            if (props.answer.user_answer === 2 && props.correct_option !== 2) setOption2('#f70a46')
+            if (props.answer.user_answer === 3 && props.correct_option !== 3) setOption3('#f70a46')
+            if (props.answer.user_answer === 4 && props.correct_option !== 4) setOption4('#f70a46')
 
-            const option = document.getElementsByClassName('option')[props.answer.user_answer-1]
-            if(option){
-                option.style.background = '#2cff28'
-            } else{
-            }
+            if (props.answer.user_answer === 1 && props.correct_option === 1) setOption1('#6df241')
+            if (props.answer.user_answer === 2 && props.correct_option === 2) setOption2('#6df241')
+            if (props.answer.user_answer === 3 && props.correct_option === 3) setOption3('#6df241')
+            if (props.answer.user_answer === 4 && props.correct_option === 4) setOption4('#6df241')
+        }
+        if(props.answer && !props.result){
+            props.answer.user_answer === 1 ? setOption1('#6df241') : setOption1('#ffffff')
+            props.answer.user_answer === 2 ? setOption2('#6df241') : setOption2('#ffffff')
+            props.answer.user_answer === 3 ? setOption3('#6df241') : setOption3('#ffffff')
+            props.answer.user_answer === 4 ? setOption4('#6df241') : setOption4('#ffffff')
+            
         }
     },[props.answer])
     return (
@@ -36,7 +51,7 @@ function QuestionTemplate(props) {
                 <Button 
                     id='1'
                     className='option'
-                    style={{}}
+                    style={{backgroundColor:option1}}
                     onClick={()=>saveAnswer(1)}
                     variant='outlined'>{props.option_1}
                     
@@ -44,26 +59,34 @@ function QuestionTemplate(props) {
                 <Button
                     id='2' 
                     className='option'
+                    style={{backgroundColor:option2}}
                     onClick={()=>saveAnswer(2)}
                     variant='outlined'>{props.option_2}
+                    
                     
                 </Button>
                 <Button 
                     id='3'
                     className='option'
+                    style={{backgroundColor:option3}}
                     onClick={()=>saveAnswer(3)}
                     variant='outlined'>{props.option_3}
+                    
                     
                 </Button>
                 <Button 
                     id='4'
                     className='option'
+                    style={{backgroundColor:option4}}
                     onClick={()=>saveAnswer(4)}
                     variant='outlined'>{props.option_4}
                 </Button>
             </div>
-            {/* {console.log(props.answer)} */}
-            <div className="glass"></div>
+            {props.result && props.explanation && 
+                <div className='explanation'>
+                    <span><b>Explanation : </b> {props.explanation}</span>
+                </div>
+            }
         </div>
     )
 }

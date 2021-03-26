@@ -4,37 +4,35 @@ import Chart from 'react-google-charts'
 function ProgressChart(props) {
     return (
         <div>
-            <Chart
-                width={'300px'}
-                height={'300px'}
-                chartType="PieChart"
-                loader={<div>Loading Chart</div>}
-                data={[
-                    ['Task', 'Hours per Day'],
-                    ['Work', 10],
-                    ['Eat', 20]
-                ]}
-                options={{
-                    title: props.title,
-                    // Just add this option
-                    pieHole: 0.9,
-                    pieSliceBorderColor: 'none',
-                    colors: ['green', 'grey'],
-                    marginTop: 30,
-                    legend: {
-                        position: 'top',
-                        textStyle: {
-                            color: 'blue',
-                            fontSize: 16,
-                            marginBottom: 30
-                        }
-                    }, 
-                    pieSliceText: 'red',
-                    
-                
-                }}
-                rootProps={{ 'data-testid': '0' }}
-            />
+            <div className="marks">
+                <Chart
+                    width={'300px'}
+                    height={'300px'}
+                    chartType="PieChart"
+                    loader={<div>Loading Chart</div>}
+                    data={[
+                        ['Data', 'Value'],
+                        ['Covered', props.obtained],
+                        ['Total', props.total-props.obtained]
+                    ]}
+                    options={{
+                        backgroundColor:'transparent',
+                        pieHole: 0.9,
+                        pieSliceBorderColor: 'white',
+                        colors: ['#84f54c', '#eef0ed'],
+                        legend: 'none',
+                        pieSliceText: 'none',
+                    }}
+                    rootProps={{ 'data-testid': '0' }}
+                />
+                <div className="title">
+                    <span>{props.title}</span>
+                </div>
+                <div className='per-text'>
+                    <span>{Math.round((props.obtained)/(props.total)*100)}%</span>
+                </div>
+            </div>
+            
         </div>
     )
 }

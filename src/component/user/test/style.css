@@ -26,7 +26,6 @@
 }
 .questions{
     width: 100%;
-    margin-top: 100px;
 }
 .question{
     background-color: transparent;
@@ -36,6 +35,7 @@
     /* box-shadow: -1px 2px 3px #e2e1e1; */
     position: relative;
     margin: auto;
+    margin-top: 50px;
 }
 
 .question_head p {
@@ -89,15 +89,7 @@
     display: grid;
     place-items: center;
 }
-/* .glass{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #ff1fce;
-    opacity: .2;
-} */
+
 .go_to_box {
     /* background: #6e6c6c; */
     width: 70px;
@@ -111,6 +103,7 @@
     flex-wrap: wrap;
     position: absolute;
     right: 0;
+    bottom: 100px;
 }
 .test_head-container  {
     font-size: 30px;
@@ -162,7 +155,76 @@
 /* Result */
 .marks {
     width: 300px;
-    background: #ffffff;
-    border: 1px solid black;
+    background: #ffffffcb;
+    border: 1px solid rgb(231, 230, 230);
     margin: auto;
+    box-shadow: 0px 1px 6px #d1d4d4;
+    position: relative;
+    height: 330px;
+    margin-top: 20px;
+}
+.title{
+    text-align: center;
+}
+.per-text{
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    
+}
+
+
+.title span{
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 260px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #4f5152;
+    
+
+}
+.per-text span{
+    font-size: 60px;
+    font-weight: 400;
+    color: #585757;
+}
+.explanation{
+    width: 100%;
+    border: 1px solid #eeeded;
+    padding: 20px 0px;
+}
+.explanation span{
+    margin: 0px 10px;
+    display: block;
+}
+.explanation b{
+    font-weight: 700;
+    font-size: 20px;
+    color: #012c31;
+    color: #29740098;
+}
+.abs{
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    background: #ffffffc2;
+}
+.p-btn{
+    padding: 10px 20px;
+    background: #012c31;
+    margin: 0px 10px;
+    color: white;
+    border-radius: 5px;
+    font-weight: 400;
 }

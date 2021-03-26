@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { StrictMode } from 'react'
+import React, { StrictMode } from 'react'
 import ReactDom from 'react-dom'
 import App from './App'
 // import './css/main.css'
@@ -11,7 +11,7 @@ console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV == 'development') {
     axios.defaults.baseURL = 'http://localhost:3001'
 } else{
-    axios.defaults.baseURL = 'https://rootrsk-train-api.herokuapp.com';
+    axios.defaults.baseURL = 'https://rootrsk-test-api.herokuapp.com';
 }
 axios.interceptors.request.use(function (config) {
     const cookies = new Cookies();

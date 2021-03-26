@@ -9,6 +9,7 @@ import Timer from '../../home/Timer'
 import GoToQuestion from './GoToQuestion'
 import QuestionTemplate from './QuestionTemplate'
 import './style.css'
+import { Link } from 'react-router-dom';
 
 
 function LiveTest() {
@@ -20,6 +21,8 @@ function LiveTest() {
     const [active_answer,setActiveAnswer] = useState(null)
     const [question_answer,setQuestionAnswer] = useState([])
     const [open,setOpen] = useState(false)
+    const [isSubmitted,setIsSubmitted]= useState(false)
+    const [answer_id,setAnswerId] = useState('')
     // Fetch Test From test id
     const getTest = async(id) =>{
         const response = await axios({
@@ -33,7 +36,7 @@ function LiveTest() {
             setActiveQuestion(0)
             setAnswer(new Array(response.data.test.questions.length).fill({user_answer:'',is_visited:false,is_marked: false}))
             setActiveAnswer(answers[active_question])
-            // console.log(answers)
+            console.log(response.data)
         }
     }
     // Function to submit the answers
@@ -46,7 +49,8 @@ function LiveTest() {
             }
         })
         if(response.data.status==='success'){
-            
+            setAnswerId(response.data.answer._id)
+            setIsSubmitted(true)
         }
         console.log(response.data)
     }
@@ -122,6 +126,7 @@ function LiveTest() {
     useEffect(()=>{
         getTest('6053a97322b80c1cd189a17b')
     },[])
+
     return (
         <div className='live-test '>
             <div className='container-flex heading'>
@@ -175,7 +180,13 @@ function LiveTest() {
                             />
                         )
                     }
+            </div>
+            {isSubmitted &&<div className='abs full'>
+                <div>
+                    <Link className='p-btn' to='/my/live-test'>Retrun Home</Link>
+                    <Link className='p-btn' to={`/my/result?${answer_id}`}>Check Result</Link>
                 </div>
+            </div>}
         </div>
     )
 }
