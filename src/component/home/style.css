@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+}
+.logo span{
+    font-size: 40px;
+    font-weight: 900;
+    color: #09878C;
+}
+.link-btn{
+    padding: 5px 20px;
+    background: #09878C;
+    color: #ffffff;
+    margin: 5px 10px;
+    border-radius: 3px;
+}
+
+.login-div{
+    width: 80%;
+    margin: auto;
+}
+.singup-div{
+    display: none;
+    
+}

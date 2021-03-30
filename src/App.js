@@ -5,6 +5,7 @@ import AdminRouter from './component/admin/AdminRouter'
 import Auth from './component/user/Auth'
 import UserRouter from './component/user/UserRouter'
 import Homepage from './component/home/Homepage'
+import Tests from './component/home/Tests'
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     <Route path='/auth' component ={Auth} />
                     <Route path='/my' component={UserRouter} />
                     <Route path='/admin' component={AdminRouter} />
+                    <Route path='/tests' component={Tests} />
                 </Switch>
             </BrowserRouter>
         </div>

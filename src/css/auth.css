@@ -4,3 +4,33 @@
     height: 100vh;
     background: rgba(5, 77, 61, 0.829);
 }
+.auth-page{
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 28px;
+    max-width: 500px;
+    margin: auto;
+    height: 700px;
+    margin-top: 100px;
+}
+.avatar div{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 30px;
+    background: #086d64;
+    color: #ffffff;
+}
+.form-control{
+    width: 100%;
+    margin-top: 10px;
+}
+.p-btn{
+    padding: 7px 20px;
+    background: #09878C;
+    color: #ffffff;
+    margin: 20px 0px;
+    border-radius: 3px;
+}
