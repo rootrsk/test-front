@@ -5,12 +5,13 @@ function Header() {
     return (
         <div className='header'>
             <div className="logo">
-                <span>Testhunt</span>
+                <Link className='' to='/' ><span>Testhunt</span></Link>
+                
             </div>
             <div>
-                <Link className='link-btn' >Tests</Link>
-                <Link className='link-btn' >About Us</Link>
-                <Link className='link-btn' >Login</Link>
+                <Link className='link-btn' to='/tests' >Tests</Link>
+                <Link className='link-btn' to='/about-us' >About Us</Link>
+                <Link className='link-btn' to='/auth' >Login</Link>
             </div>
         </div>
     )

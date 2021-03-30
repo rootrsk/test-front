@@ -17,6 +17,7 @@ function App() {
                     <Route path='/my' component={UserRouter} />
                     <Route path='/admin' component={AdminRouter} />
                     <Route path='/tests' component={Tests} />
+                    <Route path='/about-us' component={Tests} />
                 </Switch>
             </BrowserRouter>
         </div>
