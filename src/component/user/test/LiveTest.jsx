@@ -125,7 +125,8 @@ function LiveTest(props) {
     }
     
     useEffect(()=>{
-        getTest('6053a97322b80c1cd189a17b');
+        getTest(props.location.search.split('?')[1]);
+        console.log(props.location.search.split('?')[1])
         window.addEventListener("beforeunload", function(e) { 
             window.alert('HHHHH')
             console.log(e)
