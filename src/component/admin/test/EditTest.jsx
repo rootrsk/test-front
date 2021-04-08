@@ -31,7 +31,7 @@ function EditTest(props) {
         getTest(props.location.search.split('?')[1])
     },[])
     return (
-        <div>
+        <div className='test-edit-page'>
             {test && <TestForm {...test} update = {updateHandler} />}
         </div>
     )

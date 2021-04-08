@@ -12,7 +12,7 @@ import './style.css'
 import { Link } from 'react-router-dom';
 
 
-function LiveTest() {
+function LiveTest(props) {
     const [_id,setId] = useState('')
     const [test,setTest] = useState(null)
     const [answers,setAnswer]= useState([])
@@ -123,13 +123,19 @@ function LiveTest() {
         setActiveQuestion(active_question)
         setActiveAnswer(answers[active_question])
     }
+    
     useEffect(()=>{
-        getTest('6053a97322b80c1cd189a17b')
+        getTest('6053a97322b80c1cd189a17b');
+        window.addEventListener("beforeunload", function(e) { 
+            window.alert('HHHHH')
+            console.log(e)
+            e.preventDefault()
+        });
     },[])
 
     return (
         <div className='live-test '>
-            <div className='container-flex heading'>
+            <div className='container-flex heading web'>
                 {test&& <p>{test.subject.toUpperCase()}</p>}
                 {test && <p> {test.title}</p>}
                 {test && <p> {test.type_value}</p>}
@@ -161,25 +167,29 @@ function LiveTest() {
                 </div>
                 
             </div>
-            <div className='container-flex heading bottom'>
+            <div className='container-flex heading bottom web'>
                 {test && <p>Q : {test.questions.length}</p>}
                 {test && <p>T : {test.time}mins</p>}
                 {test && <p><Timer className='timer' expiryTimestamp={new Date().setSeconds(new Date().getSeconds()+60*test.time)} /></p>}
             </div>
-            <div className='go_to_boxes'>
-                    {
-                        open && answers.length>0 && questions.map((qn,index)=>
-                            <GoToQuestion 
-                                goTo={goTo} 
-                                index={index} 
-                                key={index}
-                                active={active_question === index}
-                                is_answered={!!answers[index].user_answer}
-                                is_visited={!!answers[index].is_visited}
-                                is_marked={!!answers[index].is_marked}
-                            />
-                        )
-                    }
+            <div>
+                {open&&
+                    <div className="go_to_boxes">
+                        {
+                            answers.length>0 && questions.map((qn,index)=>
+                                <GoToQuestion 
+                                    goTo={goTo} 
+                                    index={index} 
+                                    key={index}
+                                    active={active_question === index}
+                                    is_answered={!!answers[index].user_answer}
+                                    is_visited={!!answers[index].is_visited}
+                                    is_marked={!!answers[index].is_marked}
+                                />
+                            )
+                        }
+                    </div>
+                }
             </div>
             {isSubmitted &&<div className='abs full'>
                 <div>

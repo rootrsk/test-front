@@ -4,7 +4,7 @@ function CreateTest() {
     
     return (
         <div>
-            <div>
+            <div className='create-test-page'>
                 <TestForm />
             </div>
         </div>

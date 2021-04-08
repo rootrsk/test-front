@@ -19,7 +19,7 @@ function TestTemplate(props) {
                         <span>Subject </span> <span>{props.subject.toUpperCase()}</span>
                     </div>
                     <div className="card_flex">
-                        <span>Categorised </span> <span>{props.type.toUpperCase()}</span>
+                        <span>Category </span> <span>{props.type.toUpperCase()}</span>
                     </div>
                     <div className="card_flex">
                         <span>{props.type==='yearwise'?'Year': 'Chapter'} </span> <span>{props.type_value.toUpperCase()}</span>
@@ -27,6 +27,9 @@ function TestTemplate(props) {
                     
                     <div className="card_flex">
                         <span>Questions </span> <span>{props.questions.length}</span>
+                    </div>
+                    <div className="card_flex">
+                        <span>Time </span> <span>{props.time}m</span>
                     </div>
                 </div>
                 <div className="btn-container">
