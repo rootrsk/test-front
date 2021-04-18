@@ -5,11 +5,17 @@ import '../../css/auth.css'
 import Cookies from 'universal-cookie';
 import { Visibility, VisibilityOff } from "@material-ui/icons";
 import AuthStyle from './AuthStyle'
-import { Link } from "react-router-dom";
-function Auth() {
+import { Link, useHistory, useLocation } from "react-router-dom";
+import { connect } from "react-redux";
+const {parse} = require('query-string');
+
+function Auth(props) {
+    const location = useLocation()
+    const history = useHistory()
     const [error,setError] = useState('')
     const [loading,setLoading] = useState(false)
     const [login,setLogin] = useState(true)
+    
     const [loginDetails,setLoginDetails] = useState({
         email: '',
         city:'',
@@ -27,23 +33,43 @@ function Auth() {
     // Function to handle login
     const loginHandler = async() =>{
         setLoading(true)
+        props.dispatch({
+            type: 'SET_LOADING'
+        })
         setError('')
         const response = await axios({
             url: '/login',
             method:'POST',
             data: loginDetails
         })
+        props.dispatch({
+            type: 'REMOVE_LOADING'
+        })
         setLoading(false)
         if(response.data.message==='success'){
-            console.log(response.data.token)
             const cookies = new Cookies()
             cookies.set('auth_token', response.data.token, {path: '/'})
+            props.dispatch({
+                type:'SET_AUTH',
+                token: response.data.token,
+                user:response.data.user,
+                authenticated:true,
+            })
+            if(history.location.search){
+                history.push(parse(history.location.search).next)
+            }
+            props.dispatch({
+                type:'SET_CLOSE'
+            })
         } else{
             setError(response.data.error)
         }
     }
     // Function to handle signup
     const signUpHandler = async() =>{
+        props.dispatch({
+            type: 'SET_LOADING'
+        })
         setLoading(true)
         setError('')
         const response = await axios({
@@ -53,20 +79,32 @@ function Auth() {
         })
         console.log(response)
         setLoading(false)
-        
+        props.dispatch({
+            type: 'REMOVE_LOADING'
+        })
         if(response.data.status==='success'){
             const cookies = new Cookies()
             cookies.set('auth_token', response.data.token, {path:'/'})
+            props.dispatch({
+                type: 'SET_AUTH',
+                token: response.data.token,
+                user: response.data.user,
+                authenticated: true,
+            })
+            props.dispatch({
+                type: 'SET_CLOSE'
+            })
+            if (history.location.search) {
+                history.push(parse(history.location.search).next)
+            }
+            
+            
         } else{
             setError(response.data.error)
         }
     }
     const classes = AuthStyle();
     useEffect(()=>{
-       const login =  document.getElementsByClassName('login-div')
-       const signup = document.getElementsByClassName('signup-div')
-       console.log(login,signup)
-
     },[])
 
     return (
@@ -206,5 +244,7 @@ function Auth() {
         </div>
     )
 }
-
-export default Auth
+const mapStateToProsp = (state) =>{
+    return state
+}
+export default connect(mapStateToProsp) (Auth)

@@ -10,9 +10,12 @@ import store from './store/store'
 console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV == 'development') {
     axios.defaults.baseURL = 'http://localhost:3001'
+    // axios.defaults.baseURL = 'https://rootrsk-test-api.herokuapp.com';
+    
 } else{
     axios.defaults.baseURL = 'https://rootrsk-test-api.herokuapp.com';
 }
+
 axios.interceptors.request.use(function (config) {
     const cookies = new Cookies();
     const token = cookies.get('auth_token')

@@ -23,7 +23,7 @@ const style = makeStyles((theme) => ({
         },
         'button ': {
             marginTop: '10px'
-        }
+        },
     },
     margin: {
         margin: theme.spacing(1),

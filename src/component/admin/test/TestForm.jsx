@@ -25,11 +25,12 @@ function TestForm(props) {
     let [errors,setErrors] = useState([])
     const subjectOptions = [{label: 'English',value:'english'},{label: 'Hindi',value:'hindi'},{label: 'Science',value:'science'},
         {label: 'Social Science',value:'social science'},{label: 'Mathematics', value:'mathematics'},{label: 'Physics', value: 'physics'},
-        {label: 'Chemistry', value: 'chemistry'},{label: 'Biology', value: 'biology'}]
+        {label: 'Chemistry', value: 'chemistry'},{label: 'Biology', value: 'biology'},{lable:'General Science',value:'general science'},
+        {label:'English Grammer',value:'english grammer'},{label:'History',value:'history'}]
 
     const typeOption = [{label:'ChapterWise',value:'chapterwise'},{label:'YearWise',value:'yearwise'},{label:'Set Wise',value:'setwise'}]
-    const standardOptions = [{label: '9 Th',value: 9},{label: '10 Th',value:10},{label: '11 Th',value:11},{label: '12 Th',value: 12}]
-    const streamOptions = [{label:'Secondary',value:'secondary'},{label:'Arts',value:'arts'},{label:'Science',value:'science'}]
+    const standardOptions = [{label: '9 Th',value: 9},{label: '10 Th',value:10},{label: '11 Th',value:11},{label: '12 Th',value: 12},{label:'General',value:13}]
+    const streamOptions = [{label:'Secondary',value:'secondary'},{label:'Arts',value:'arts'},{label:'Science',value:'science'},{label:'General',value:'general'}]
 
     const saveQuestion = (data) => {
         console.log(data)

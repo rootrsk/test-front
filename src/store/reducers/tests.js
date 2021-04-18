@@ -1,11 +1,16 @@
-import { FETCH_TEST_REQUEST } from "../actions/tests";
+const testInitialState = {
+    test:[],
+    user_test:[]
+}
 
-export defalut function tests(state,action) {
-    switch(action.type){
-        case FETCH_TEST_REQUEST:
-            break;
-
-        defalut
+export default (state=testInitialState,action) =>{
+    switch (action.type) {
+        case 'GET_TEST':
             return state
+            break;
+    
+        default:
+            return state
+            break;
     }
 }

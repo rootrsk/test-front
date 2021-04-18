@@ -168,10 +168,18 @@ function LiveTest(props) {
                 </div>
                 
             </div>
-            <div className='container-flex heading bottom web'>
+            <div className='container-flex heading  web'>
                 {test && <p>Q : {test.questions.length}</p>}
                 {test && <p>T : {test.time}mins</p>}
-                {test && <p><Timer className='timer' expiryTimestamp={new Date().setSeconds(new Date().getSeconds()+60*test.time)} /></p>}
+                {test && 
+                    <p>
+                        <Timer 
+                            onExpire={submitHandler} 
+                            className='timer' 
+                            expiryTimestamp={new Date().setSeconds(new Date().getSeconds()+60*test.time)} 
+                        />
+                    </p>
+                }
             </div>
             <div>
                 {open&&

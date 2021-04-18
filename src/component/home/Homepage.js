@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from './Card'
+import Footer from './Footer.jsx'
 import Header from './Header'
+import HomeSlider from './HomeSlider'
 
 function Homepage() {
     return (
@@ -13,6 +15,11 @@ function Homepage() {
                 <Card />
                 <Card />
             </div>
+            <div style={{position:'relative'}}>
+                {/* <HomeSlider /> */}
+            </div>
+            
+            <Footer />
         </div>
     )
 }
