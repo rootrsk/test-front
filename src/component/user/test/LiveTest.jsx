@@ -146,8 +146,7 @@ function LiveTest(props) {
                     <div>
                         
                     </div>
-                    
-                    <IconButton onClick={()=>setOpen(!open)}>
+                    <IconButton onClick={()=>setOpen(!open)} style={{background:'black'}}>
                         {open?<CloseIcon />:<MenuIcon />}
                     </IconButton>
                 </div>
@@ -168,7 +167,7 @@ function LiveTest(props) {
                 </div>
                 
             </div>
-            <div className='container-flex heading  web'>
+            <div className='container-flex heading  web' style={{margin:'20px 0px'}}>
                 {test && <p>Q : {test.questions.length}</p>}
                 {test && <p>T : {test.time}mins</p>}
                 {test && 
@@ -180,6 +179,7 @@ function LiveTest(props) {
                         />
                     </p>
                 }
+                <Button onClick={submitHandler} variant='contained'>Submit</Button>
             </div>
             <div>
                 {open&&
@@ -202,8 +202,8 @@ function LiveTest(props) {
             </div>
             {isSubmitted &&<div className='abs full'>
                 <div>
-                    <Link className='p-btn' to='/my/live-test'>Retrun Home</Link>
-                    <Link className='p-btn' to={`/my/result?${answer_id}`}>Check Result</Link>
+                    <Link className='p-btn' to='/app/live-test'>Retrun Home</Link>
+                    <Link className='p-btn' to={`/app/result?${answer_id}`}>Check Result</Link>
                 </div>
             </div>}
         </div>

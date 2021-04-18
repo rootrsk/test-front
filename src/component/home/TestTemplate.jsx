@@ -33,8 +33,7 @@ function TestTemplate(props) {
                     </div>
                 </div>
                 <div className="btn-container">
-                    <Button variant='contained' color='secondary'><Link to={`/my/live-test?${props._id}`}>Start</Link></Button>
-                    
+                    <Button variant='contained' color='secondary'><Link to={`/app/live-test?${props._id}`}>Start</Link></Button>
                 </div>
             </div>
         </div>
