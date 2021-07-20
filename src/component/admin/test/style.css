@@ -1,0 +1,71 @@
+*{
+    text-decoration: none;
+}
+.input{
+
+    display: block;
+    margin:20px 0px;
+    margin-bottom: 20px;
+    /* width: 100%; */
+}
+.errors{
+    position: absolute;
+    top:0px;
+    z-index: 2;
+    right: 0px;
+}
+.error{
+    margin: 10px 0px;
+}
+/* Test Form */
+.create-test-page{
+    background: #ffffff;
+    min-height: 100vh;
+}
+.test-edit-page{
+    background: #ffffff;
+    min-height: 100vh;
+
+}
+.test-form{
+    background: #ffffff;
+}
+
+.question_form{
+    /* width: 90%;
+    margin: auto; */
+    
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.question_form-template{
+    border: 1px solid black;
+    padding: 50px 5%;
+    margin-top: 50px;
+}
+
+
+
+/* Test Template */
+.test-template{
+    width: 280px;
+    /* height: 320px; */
+    box-shadow: -1px 3px 2px #ffffff0e;
+    padding: 10px;
+    border: 1px solid #ffffff67;
+}
+
+.card_flex{
+    display: flex;
+    justify-content: space-between;
+}
+.card_flex span{
+    font-size: 18px;
+    margin: 7px 0px;
+}
+.test-template button{
+    margin: 10px 20px;
+    padding: 7px 40px;
+}

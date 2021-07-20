@@ -1,0 +1,26 @@
+.test_crud{
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    background: var(--primary-bg);
+    padding: 10px 0px;
+}
+.test-form{
+    margin-top: 20px;
+}
+
+.test-form-container{
+    width: 90%;
+    margin: auto;
+    background: var(--primary-bg);
+}
+.test-form-container .input {
+    margin: 5px !important;
+}
+.questions-accordion{
+    
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}

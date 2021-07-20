@@ -1,0 +1,42 @@
+.dashboard{
+    background: var(--deep-primary-bg);
+}
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--deep-primary-bg);
+}
+
+.chart-box {
+    background: #ffffff;
+    padding: 20px 20px;
+    border-radius: 5px 5px;
+    height: 400px;
+    width: 49%;
+    margin: 10px 0px;
+}
+
+/* .accuracy-chart:nth-child(2) {
+    width: 50%;
+}
+
+.accuracy-chart:nth-child(2) {
+    width: 48%;
+} */
+.chart-container {
+    width: 50%;
+    height: 300px;
+}
+
+.activity-chart {
+    height: 300px;
+    width: 100%;
+}
+
+.activity {
+    max-width: 850px;
+    position: relative;
+    width: 48%;
+}

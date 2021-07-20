@@ -1,0 +1,72 @@
+.auth-page{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+}
+.auth-div{
+    background: #ffffff;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 100px;
+    padding-bottom:25px ;
+    position: relative;
+}
+.cancle-cross{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.avatar div{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 30px;
+    background: #086d64;
+    color: #ffffff;
+}
+.form-control{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-div {
+    width: 80%;
+    margin: auto;
+}
+.signup-div {
+    width: 80%;
+    margin: auto;
+    transition: height 2s;
+}
+
+.p-btn{
+    padding: 7px 20px;
+    background: #09878C;
+    color: #ffffff;
+    margin: 20px 0px;
+    border-radius: 3px;
+}
+.signup-tg{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    text-align: right;
+    margin: 10px;
+    color: blue;
+}
+.error-t{
+    color: red;
+}

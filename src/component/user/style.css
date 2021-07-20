@@ -1,0 +1,70 @@
+.user-header{
+    display: flex !important; 
+    background: var(--deep-primary-bg) !important;
+}
+.appbar{
+    background: var(--primary-bg) !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--primary-border);
+}
+.content{
+    margin: auto;
+    width: calc(100% - 270px);
+    margin-top: 70px;
+    background: var(--deep-primary-bg) !important;
+}
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    background: inherit;
+}
+.drawer {
+    background:var(--light-primary-bg) !important;
+}
+.menu-icon{
+    color: var(--primary-text);
+}
+.siderbar{
+    height: 100%;
+}
+.bottom-div{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.open-drawer{
+
+}
+.close-drawer{
+
+}
+.content-open{
+    width: calc(100% - 270px);
+    margin: auto;
+    margin-top: 70px;
+}
+.content-close{
+    width: calc(100% - 20px);
+    margin: auto;
+    margin-top: 70px;
+}
+.route-link li {
+    height: 65px;
+}
+.active-route li {
+    background: var(--deep-primary-bg);
+    border: 1px solid var(--primary-border);
+    border-right: 7px solid var(--glow-sky);
+    color: var(--light-acitve);
+    font-family: var(--primary-font);
+}
+.route-link li span{
+    font-family: var(--primary-font);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.active-route li svg{
+    color: var(--light-acitve);
+}
