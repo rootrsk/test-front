@@ -2,7 +2,6 @@ import { Button } from '@material-ui/core'
 import React, { useState,useEffect } from 'react'
 
 function QuestionTemplate(props) {
-    // console.log(props)
     const [option1, setOption1] = useState('#ffffff')
     const [option2, setOption2] = useState('#ffffff')
     const [option3, setOption3] = useState('#ffffff')
@@ -38,13 +37,12 @@ function QuestionTemplate(props) {
             props.answer.user_answer === 2 ? setOption2('#6df241') : setOption2('#ffffff')
             props.answer.user_answer === 3 ? setOption3('#6df241') : setOption3('#ffffff')
             props.answer.user_answer === 4 ? setOption4('#6df241') : setOption4('#ffffff')
-            
         }
     },[props.answer])
     
     return (
-        <div className='question'>
-            <div className="question_head">
+        <div className=''>
+            <div className="">
                 <p className='qn-title'>{props.heading}</p>
                 {props.qn_e &&
                     <p className='question_h'>{props.index+1}. {props.qn_e}</p>
@@ -68,17 +66,14 @@ function QuestionTemplate(props) {
                     style={{backgroundColor:option2}}
                     onClick={()=>saveAnswer(2)}
                     variant='outlined'>{props.option_2}
-                    
-                    
                 </Button>
                 <Button 
                     id='3'
                     className='option'
                     style={{backgroundColor:option3}}
                     onClick={()=>saveAnswer(3)}
-                    variant='outlined'>{props.option_3}
-
-                    
+                    variant='outlined'>
+                        {props.option_3}
                 </Button>
                 <Button 
                     id='4'
@@ -88,7 +83,6 @@ function QuestionTemplate(props) {
                     variant='outlined'>{props.option_4}
                 </Button>
             </div>
-            {console.log(props.answer)}
             {props.result && props.explanation && 
                 <div className='explanation'>
                     <span><b>Explanation : </b> {props.explanation}</span>

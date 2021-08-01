@@ -48,10 +48,10 @@ a{
     justify-content: space-between;
 }
 .p-btn {
-    padding: 10px 20px;
-    background: #012c31;
+    padding: 10px 30px;
+    background: var(--primary-color) !important;
     margin: 0px 10px;
-    color: white;
+    color: white !important;
     border-radius: 5px;
     font-weight: 400;
 }
@@ -287,5 +287,9 @@ a{
 .container-10{
     background: var(--primary-bg);
     width: 90%;
+    margin: auto;
+}
+.w95{
+    width: 95%;
     margin: auto;
 }

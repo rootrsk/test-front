@@ -20,5 +20,29 @@
     /* background: red; */
 }
 .live-test-page{
+    top: 0px;
     background: var(--deep-primary-bg);
+    height: 100vh;
+    display: flex;
+    
+}
+.go-to-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.go-to-sidebar{
+    width: 25%;
+    background: var(--primary-bg);
+    margin-top: 30px;
+}
+.question-container {
+    background: var(--primary-bg);
+}
+.live-test-content{
+    width: 74%;
+    margin: auto;
+    padding: 20px 20px;
+    background: var(--primary-bg);
+    margin-top: 30px;
 }

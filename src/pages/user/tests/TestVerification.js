@@ -43,6 +43,9 @@ function TestVerification(props) {
         setAnswer(answers)
         setAnswers(answer.answers[activeQuestion])
     }
+    const submitHandler = async () => {
+        console.log(answer)
+    }
     useEffect(()=>{
         initVerification(props.location.search.split('?')[1])
         setId(props.location.search.split('?')[1])
@@ -73,6 +76,7 @@ function TestVerification(props) {
                             saveAnswer={saveAnswer}
                             setAnswer={setAnswer}
                             answers = {answer}
+                            submitHandler={submitHandler}
                         />
                     }
                 </FullScreen>
@@ -85,7 +89,7 @@ function TestVerification(props) {
             <p>Verifiacation</p>
             {test && 
                 <div className="test-details">
-                    
+                    <input type='checkbox' />
                 </div>
             }
             <button onClick={startTestHandler}>Start</button>
